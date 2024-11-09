@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio de Sesión</title>
+<style>
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f5e6e0;
+    }
+    .hidden {
+        display: none;
+    }
+    /* Estilos de la pantalla de inicio de sesión */
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .login-box {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 60%;
+        max-width: 800px;
+    }
+    .login-image {
+        background-color: #f3d7d1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+    .login-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    .login-form {
+        padding: 40px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-form h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .login-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .login-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #f3c7be;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+    }
+    .login-form button:hover {
+        background-color: #e8a99a;
+    }
+    .login-form .link {
+        margin-top: 10px;
+        color: #666;
+        font-size: 14px;
+        text-align: center;
+    }
+    .login-form .link a {
+        color: #f3c7be;
+        text-decoration: none;
+    }
+
+    /* Estilos de la barra de navegación */
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px;
+        background-color: #f3c7be;
+        color: white;
+        font-weight: bold;
+    }
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+    }
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilos de la galería de productos */
+    .product-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .product-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        text-align: center;
+        padding: 15px;
+    }
+    .product-card img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .product-card h3 {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    .product-card .price {
+        font-size: 18px;
+        color: #333;
+        margin: 10px 0;
+    }
+    .product-card button {
+        background-color: #f3c7be;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .product-card button:hover {
+        background-color: #e8a99a;
+    }
+</style>
+</head>
+<body>
+
+<!-- Pantalla de inicio de sesión -->
+<div class="login-container" id="login-container">
+    <div class="login-box">
+        <div class="login-image">
+            <img src="path/to/your/image.png" alt="Clothing Rack Image">
+        </div>
+        <div class="login-form">
+            <h2>¡WELCOME BACK!</h2>
+            <input type="text" id="username" placeholder="analuisagarza" required>
+            <input type="password" id="password" placeholder="pagina12" required>
+            <button onclick="login()">Iniciar sesión</button>
+            <div class="link">
+                <p><a href="#">Recordar contraseña</a></p>
+                <p>¿Todavía no tienes una cuenta? <a href="#">Regístrate</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vista de administrador y usuario -->
+<div class="navbar hidden" id="navbar">
+    <a href="#" id="welcome-user"></a>
+    <a href="#">Home</a>
+    <a href="#" id="extra-link" class="hidden"></a>
+    <a href="#">Orders</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+</div>
+
+<div class="product-gallery hidden" id="product-gallery">
+    <!-- Productos comunes para ambas vistas -->
+    <div class="product-card">
+        <img src="path/to/image1.jpg" alt="Product Image">
+        <h3>DAILY</h3>
+        <p class="price">$68,56</p>
+        <button>add</button>
+    </div>
+    <div class="product-card">
+        <img src="path/to/image2.jpg" alt="Product Image">
+        <h3>INTIMY</h3>
+        <p class="price">$68,56</p>
+        <button>add</button>
+    </div>
+    <div class="product-card">
+        <img src="path/to/image3.jpg" alt="Product Image">
+        <h3>SUMMER</h3>
+        <p class="price">$68,56</p>
+        <button>add</button>
+    </div>
+    <div class="product-card">
+        <img src="path/to/image4.jpg" alt="Product Image">
+        <h3>NIGHT</h3>
+        <p class="price">$68,56</p>
+        <button>add</button>
+    </div>
+    <div class="product-card">
+        <img src="path/to/image5.jpg" alt="Product Image">
+        <h3>CASUAL</h3>
+        <p class="price">$68,56</p>
+        <button>add</button>
+    </div>
+    <div class="product-card">
+        <img src="path/to/image6.jpg" alt="Product Image">
+        <h3>PARTY</h3>
+        <p class="price">$68,56</p>
+        <button>add</button>
+    </div>
+</div>
+
+<script>
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        let role;
+
+        // Autenticación simple y asignación de rol
+        if (username === 'admin' && password === 'adminpass') {
+            role = 'admin';
+            document.getElementById('welcome-user').textContent = 'Welcome, Admin';
+            document.getElementById('extra-link').textContent = 'Manage Products';
+            document.getElementById('extra-link').classList.remove('hidden');
+        } else if (username === 'user' && password === 'userpass') {
+            role = 'user';
+            document.getElementById('welcome-user').textContent = 'Welcome, User';
+        } else {
+            alert('Invalid username or password.');
+            return;
+        }
+
+        // Ocultar el formulario de inicio de sesión y mostrar la vista según el rol
+        document.getElementById('login-container').classList.add('hidden');
+        document.getElementById('navbar').classList.remove('hidden');
+        document.getElementById('product-gallery').classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
